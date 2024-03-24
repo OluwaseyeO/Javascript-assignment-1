@@ -1,46 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrayt</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <style>
-        .container{
-            position: absolute;
-            top: 23% ;
-            left: 30%;
-        }
-    </style>
+    <title>switch</title>
 </head>
+
 <body>
-            <div class="container bg-warning w-25 mt-5 ms-5  rounded-3  " style="height: 50vh; ">
-                <div id="result" class="text-dark fs-5 text-capitalize pt-3 ps-3 float-start gap-5 "></div>
-                <div id="update" class="text-danger fw-bold mt-3 text-capitalize text-center float-start  ms-5"></div>
-                
-                <button id="delete" class="btn-sm btn-success mt-5 position-absolute top-50 start-50"> Delete</button>
+    <div id="result"></div>
 
-                
-            </div>
-            
     <script>
-        
-        const student = ['ade', 'Michael', 'Dennis', 'seye', 'Martins'];
-        document.getElementById('result').innerHTML = student.join('<br>');
-        
-        let deleteBtn = document.getElementById('delete');
-        deleteBtn.onclick = () =>{
-            let userInput = prompt('input a number here',);
-       
 
 
-        
-        let conInput = Number(userInput);
-        const removeStudent = student.splice(conInput, 1);
-        // console.log(removeStudent);
-       document.getElementById('update').innerHTML = '<strong>'+'Updated Student name '+'</strong>' + '<br>' + '<br>' + student.join('<br>');
+        let Presidents = [
+            {
+                Id: 1,
+                name: 'Abubakar Tafawa Balewa',
+                year: 1960,
+            },
+
+            {
+                Id: 2,
+                name: 'Aguyi Ironsi',
+                year: 1966,
+            },
+
+            {
+                Id: 3,
+                name: 'Yakubu Gowon',
+                year: 1966,
+            },
+
+            {
+                Id: 4,
+                name: ' Murtala Mohammed',
+                year: 1975,
+
+            },
+
+            {
+                Id: 5,
+                name: 'Gen Olusegun Aremu Obasanjo',
+                year: 1976,
+
+            },
+
+            {
+                Id: 6,
+                name: 'Shehu Shagari',
+                year: 1979,
+
+            },
+
+            {
+                Id: 7,
+                name: 'Gen Muhammadu Buhari',
+                year: 1983,
+
+            },
+
+            {
+                Id: 8,
+                name: 'Ibrahimm Badamosi Babangida',
+                year: 1985,
+
+            },
+            {
+                Id: 9,
+                name: "Ernest Shonekan",
+                year: 1993,
+            },
+
+            {
+                Id: 10,
+                name: 'Gen Sanni Abacha',
+                year: 1993,
+
+            },
+
+            {
+                Id: 11,
+                name: 'Abdusalam Abubakar',
+                year: 1998,
+
+            },
+
+            {
+                Id: 12,
+                name: 'Aremu Olusegun Obasanjo',
+                year: 1999,
+
+            },
+
+            {
+                Id: 13,
+                name: 'Musa Yaradua',
+                year: 2007,
+
+            },
+
+            {
+                Id: 14,
+                name: 'Goodluck Ebele Jonathan',
+                year: 2011,
+            },
+
+            {
+                Id: 15,
+                name: 'Muhammadu Buhari',
+                year: 2015,
+
+            }
+
+
+
+        ]
+
+
+
+        var leader = Presidents[Math.floor(Math.random() * 16)];
+
+        let userInput = prompt('what year did ' + leader.name + ' ' + 'rule Nigeria');
+        let userDate = Number(userInput);
+        //console.log(userDate);
+
+        switch (userInput == Number(leader.year)) {
+            case true:
+                document.getElementById('result').innerHTML = "its correct";
+                break;
+            case false:
+                document.getElementById('result').innerHTML = 'Its wrong';
         }
+
+
+
+
+
 
     </script>
+
+
 </body>
+
 </html>
